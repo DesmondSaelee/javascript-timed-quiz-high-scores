@@ -1,0 +1,40 @@
+/* setting display flex to class topLine and spreading them out to each end. Also, adjusting font size and weight. */
+.topLine {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 100;
+    font-size: medium;
+}
+
+/* Setting my div with class container to column and having everything in the center. */
+.container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+
+}
+
+/* Setting my h3 element with intro class to desired font weight and size. Also, setting a width, so it can wrap around. */
+.intro {
+    flex-wrap: wrap;
+    width: 35%;
+    font-weight: 100;
+    font-size: medium;
+}
+
+/*setting my start quiz button background color and rounded corners. */
+.startButton {
+    background-color: blueviolet;
+    border-radius: 5px;
+}
+
+/* When hovering over button it turns white. */
+.startButton:hover {
+    background-color: white;
+}
+
+/* When clicking button it turns grey. */
+.startButton:active {
+    background-color: grey;
+}
