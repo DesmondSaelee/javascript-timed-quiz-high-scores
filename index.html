@@ -11,15 +11,16 @@
     <header>
         
         <nav>
-        <h1 class="topLine"><a href="">View Highscores</a>Time: 0</h1>
+        <h1 class="topLine"><a href="">View Highscores</a><span id="timer">time: 0</span></h1>
         </nav>
          
     </header>
-    <div class="container">
+    <div class="container" id="openingPage">
         <h2 class="codingQuiz">Coding Quiz Challenge</h2>
         <h3 class="intro">Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by 15 seconds!</h3>
-        <button class="startButton"> Start Quiz</button>
+        <button class="startButton" id="startButton"> Start Quiz</button>
     </div>
+    <div class="quiz" id="quiz"></div>
     <script src="./script.js"></script>
 </body>
 </html>

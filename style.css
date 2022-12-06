@@ -37,4 +37,9 @@
 /* When clicking button it turns grey. */
 .startButton:active {
     background-color: grey;
+    
+}
+
+.quiz {
+    display: none;
 }
