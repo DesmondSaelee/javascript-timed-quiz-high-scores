@@ -43,3 +43,22 @@
 .quiz {
     display: none;
 }
+
+#submit {
+    background-color: blueviolet;
+    border-radius: 5px;
+}
+
+#submit:hover {
+    background-color: white;
+}
+
+#submit:active {
+    background-color: grey;
+}
+
+/* #endPage {
+    display: flex;
+    justify-content: center;
+    
+} */
