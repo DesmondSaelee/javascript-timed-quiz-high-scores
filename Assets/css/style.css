@@ -4,6 +4,7 @@
     justify-content: space-between;
     font-weight: 100;
     font-size: medium;
+    
 }
 
 /* Setting my div with class container to column and having everything in the center. */
@@ -14,6 +15,8 @@
     
 
 }
+
+
 
 /* Setting my h3 element with intro class to desired font weight and size. Also, setting a width, so it can wrap around. */
 .intro {

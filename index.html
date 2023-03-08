@@ -5,30 +5,36 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Timed quiz</title>
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./Assets/css/style.css" />
 </head>
 <body>
     <header>
         
-        <nav>
-        <h1 class="topLine"><a href="">View Highscores</a><span id="timer">time: 0</span></h1>
+        <nav id="navBar">
+        <h1 class="topLine"><a href="">View Highscores</a><div class="timer">Time: 75</div></h1>  
         </nav>
          
     </header>
     <div class="container" id="openingPage">
-        <h2 class="codingQuiz">Coding Quiz Challenge</h2>
+        <h2 class="question">Coding Quiz Challenge</h2>
         <h3 class="intro">Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by 15 seconds!</h3>
-        <button class="startButton" id="startButton"> Start Quiz</button>
+        <button class="startButton" > Start Quiz</button>
+        <li>
+            <ul id="question1"><button class="startButton" ></button></ul>
+            <ul id="question2"></ul>
+            <ul id="question3"></ul>
+            <ul id="question4"></ul>
+        </li>
     </div>
-    <div class="quiz" id="question1"></div>
+    <!-- <div class="quiz" id="question1"></div>
     <div class="quiz" id="question2"></div>
     <div class="quiz" id="question3"></div>
     <div class="quiz" id="question4"></div>
-    <div class="quiz" id="endPage">
-        <h2 class="allDone">All Done!</h2>
+    <div class="quiz" id="endPage"> -->
+        <!-- <h2 class="allDone">All Done!</h2>
         <h3 class="finalscore"> Your final score is 45</h3>
         <h3 class="intials">Enter Initials: <input type="text"> <button id="submit">Submit</button></h3>
-    </div>
-    <script src="./script.js"></script>
+    </div> -->
+    <script src="./Assets/js/script.js"></script>
 </body>
 </html>
