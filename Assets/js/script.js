@@ -10,20 +10,67 @@
 // var endPage = document.getElementById("endPage");
  
 // -----new code----
-var answer = document.querySelector(".startButton")
+var openingPage = document.querySelector("#openingPage")
+var quizPage = document.querySelector("#quizPage")
+var currentQuestion = 0
+var answer1 = document.querySelector("#answer1")
+var answer2 = document.querySelector("#answer2")
+var answer3 = document.querySelector("#answer3")
+var answer4 = document.querySelector("#answer4")
 var question = document.querySelector(".question")
+var questionEl = document.getElementById("question")
+var answersEl = document.getElementById("answers")
 var blank = document.querySelector(".intro")
 var timerClock = document.querySelector(".timer");
 var timer;
 var timerCount;
 
+var questionsArray = [
+    {
+        question: "Commonly used data types do not include: ___.",
+        answers: ["strings", "booleans", "alerts", "numbers"],
+        correctIndex: 2
+        
+    }, {
+        question: "The condition in and if/else statement is enclosed within ___.",
+        answers: ["quotes", "curly brackets", "parentheses", "square brackets"],
+       correctIndex: 2
+    }, {
+        question: "Arrays in Javascript can be used to store ___.",
+        answers: ["numbers and strings", "other arrays", "booleans", "all the above"],
+        correctIndex: 3
+        
+
+    }, {
+        question: "String values must be enclosed within ___ when being assigned to variables.",
+        answers: ["commas", "curly brackets", "quotes", "parentheses"],
+        correctIndex: 2
+        
+    },
+];
+
+// document.getElementById('answer2').style.visibility= 'hidden';
 function init(){
     timerCount = 75
-
+    // var x = document.getElementById("answer2");
+    // document.getElementById('answer2').style.visibility= 'hidden';
+//    this code hides the answer2 button, but I need to figure out how to bring it back.
+    // if (x.style.display === "none") {
+    //   x.style.display = "block";
+    // } else {
+    //   x.style.display = "none";
+    // }
+    
 };
 
 function startGame(){
+    timerCount = 75
+    console.log(openingPage)
+    console.log(quizPage)
+    openingPage.classList.add("hidden")
+    quizPage.classList.remove("hidden")
     startTimer()
+    displayQuestion()
 };
 
 function startTimer() {
@@ -31,52 +78,93 @@ function startTimer() {
     timer = setInterval(function() {
       timerCount--;
       timerClock.textContent = timerCount;
-      if (timerCount >= 0) {
-        // Tests if win condition is met
-        if (isWin && timerCount > 0) {
-          // Clears interval and stops timer
-          clearInterval(timer);
-          winGame();
-        }
-      }
-      // Tests if time has run out
-      if (timerCount === 0) {
-        // Clears interval
-        clearInterval(timer);
-        loseGame();
-      }
+    //   if (timerCount >= 0) {
+    //     // Tests if win condition is met
+    //     if (isWin && timerCount > 0) {
+    //       // Clears interval and stops timer
+    //       clearInterval(timer);
+    //       winGame();
+    //     }
+    //   }
+    //   // Tests if time has run out
+    //   if (timerCount === 0) {
+    //     // Clears interval
+    //     clearInterval(timer);
+    //     loseGame();
+    //   }
     }, 1000);
   };
 
-  function startGame(){
-    timerCount = 75;
-    question.textContent = "Commonly used data types do not include: ___.";
-    blank.textContent = "";
-    answer.textContent = ["strings", "booleans", "alerts", "numbers"];
+  function loseTime(){
 
-    startTimer()
+  }
+  
+  function displayQuestion(){
+    
+    questionEl.textContent = questionsArray[currentQuestion].question
+    questionsArray[currentQuestion].answers.forEach(function(answer, index){
+        let item = document.createElement("li")
+        let answerButton = document.createElement("button")
+        answerButton.setAttribute("data-answer", index )
+        
+        answerButton.style.backgroundColor = "blueviolet"
+        answerButton.textContent = answer
+        item.appendChild(answerButton)
+        answersEl.appendChild(item)
+        
+        
+    })
+
+    
   }
 
-  answer.addEventListener("click", startGame);
+  function checkAnswer(event){
+    let userAnswer= parseInt(event.target.dataset.answer)
+    if (userAnswer === questionsArray[currentQuestion].correctIndex){
+        currentQuestion++ 
+        answersEl.innerHTML = ""
+        if(currentQuestion >= questionsArray.length){
+            // have display results function to hide other screens and shows score. make another div
+            // to hide then view questions when you click start quiz hide opening page
+            displayResults()
+        } else{
+            displayQuestion()
+        }
+       
+    } else {
+        timerCount-=5
+        currentQuestion++
+        answersEl.innerHTML = ""
+        displayQuestion()
+    }
+
+  }
+
+//   function startGame(){
+//     timerCount = 75;
+//     currentQuestion = 0
+    
+//     startTimer()
+//     displayQuestion()
+//   }
+
+//   function question2(){
+//     question.textContent = "The condition in and if/else statement is enclosed within ___."
+//     answer1.textContent = "quotes";
+//     answer2.textContent = "curly brackets";
+//     answer3.textContent = "parentheses";
+//     answer4.textContent = "square brackets";
+//   }
+
+  startQuiz.addEventListener("click", startGame);
+
+  answersEl.addEventListener("click", checkAnswer )
+
+  init();
 
 // ---old code---
 // when user answer question correctly index goes up 1
-// var questions = [
-//     {
-//         "question": "Commonly used data types do not include: ___.",
-//         "choice1": "strings", "choice2": "booleans", "correctAnswer": "alerts", "choice3": "numbers"
-//     }, {
-//         "question": "The condition in and if/else statement is enclosed within ___.",
-//         "choice1": "quotes", "choice2": "curly brackets", "correctAnswer": "parentheses", "choice3": "square brackets"
-//     }, {
-//         "question": "Arrays in Javascript can be used to store ___.",
-//         "choice1": "numbers and strings", "choice2": "other arrays", "choice3": "booleans", "correctAnswer": "all the above"
 
-//     }, {
-//         "question": "String values must be enclosed within ___ when being assigned to variables.",
-//         "choice1": "commas", "choice2": "curly brackets", "correctAnswer": "quotes", "choice3": "parentheses"
-//     },
-// ];
 
 
 
