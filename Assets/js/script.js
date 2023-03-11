@@ -10,17 +10,17 @@
 // var endPage = document.getElementById("endPage");
  
 // -----new code----
-var openingPage = document.querySelector("#openingPage")
-var quizPage = document.querySelector("#quizPage")
-var currentQuestion = 0
-var answer1 = document.querySelector("#answer1")
-var answer2 = document.querySelector("#answer2")
-var answer3 = document.querySelector("#answer3")
-var answer4 = document.querySelector("#answer4")
-var question = document.querySelector(".question")
-var questionEl = document.getElementById("question")
-var answersEl = document.getElementById("answers")
-var blank = document.querySelector(".intro")
+var openingPage = document.querySelector("#openingPage");
+var quizPage = document.querySelector("#quizPage");
+var currentQuestion = 0;
+var answer1 = document.querySelector("#answer1");
+var answer2 = document.querySelector("#answer2");
+var answer3 = document.querySelector("#answer3");
+var answer4 = document.querySelector("#answer4");
+var question = document.querySelector(".question");
+var questionEl = document.getElementById("question");
+var answersEl = document.getElementById("answers");
+var blank = document.querySelector(".intro");
 var timerClock = document.querySelector(".timer");
 var timer;
 var timerCount;
@@ -140,13 +140,6 @@ function startTimer() {
 
   }
 
-//   function startGame(){
-//     timerCount = 75;
-//     currentQuestion = 0
-    
-//     startTimer()
-//     displayQuestion()
-//   }
 
 //   function question2(){
 //     question.textContent = "The condition in and if/else statement is enclosed within ___."

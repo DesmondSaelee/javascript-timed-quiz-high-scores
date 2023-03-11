@@ -1,6 +1,6 @@
-.hidden{
+/* .hidden{
     display: none;
-}
+} */
 
 /* setting display flex to class topLine and spreading them out to each end. Also, adjusting font size and weight. */
 .topLine {
