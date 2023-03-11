@@ -1,6 +1,3 @@
-.hidden{
-    display: none;
-}
 
 /* setting display flex to class topLine and spreading them out to each end. Also, adjusting font size and weight. */
 .topLine {
@@ -18,6 +15,11 @@
     flex-direction: column;
     
 
+}
+
+#answers{
+    display: block;
+    justify-content: center;
 }
 
 
@@ -62,3 +64,6 @@
     background-color: grey;
 }
 
+.hidden{
+    display: none;
+}

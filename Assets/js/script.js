@@ -94,7 +94,7 @@ function startTimer() {
 
   function loseTime(){
 
-  }
+  };
   
   function displayQuestion(){
     
@@ -110,7 +110,11 @@ function startTimer() {
         answersEl.appendChild(item)
         
         
-    })
+    });
+
+    function displayResults(){
+
+    }
 
     
   }
@@ -130,9 +134,9 @@ function startTimer() {
        
     } else {
         timerCount-=5
-        currentQuestion++
-        answersEl.innerHTML = ""
-        displayQuestion()
+        // currentQuestion++
+        // answersEl.innerHTML = ""
+        // displayQuestion()
     }
 
   }
