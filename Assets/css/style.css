@@ -13,16 +13,20 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    justify-content: center;
     
 
 }
 
-#answers{
-    display: block;
-    justify-content: center;
-}
 
 
+#answersContatiner {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+  }
+
+ 
 
 /* Setting my h3 element with intro class to desired font weight and size. Also, setting a width, so it can wrap around. */
 .intro {

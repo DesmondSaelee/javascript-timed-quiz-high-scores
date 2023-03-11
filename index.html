@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,40 +8,47 @@
     <title>Timed quiz</title>
     <link rel="stylesheet" href="./Assets/css/style.css" />
 </head>
+
 <body>
     <header>
-        
+
         <nav id="navBar">
-        <h1 class="topLine"><a href="">View Highscores</a><div class="timer">Time: 75</div></h1>  
+            <h1 class="topLine"><a href="">View Highscores</a>
+                <div class="timer">Time: 75</div>
+            </h1>
         </nav>
-         
+
     </header>
-    <div id="openingPage"  class="container" >
+    <div id="openingPage" class="container">
         <h2 class="question">Coding Quiz Challenge</h2>
-        <h3 class="intro">Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by 15 seconds!</h3>
+        <h3 class="intro">Try to answer the following code-related questions within the time limit. Keep in mind that
+            incorrect answers will penalize your score/time by 15 seconds!</h3>
         <button class="startButton" id="startQuiz"> Start Quiz</button>
-       
+
     </div>
 
     <div id="quizPage" class="hidden container">
         <h3 class="intro" id="question"> </h3>
-        <ul id="answers">
-            
-        </ul>
+        <div id="answersContainer">
+            <ul id="answers">
+
+            </ul>
+        </div>
 
     </div>
 
     <div class="hidden" id="scorePage">
-        <h3 class=""> </h3>
-        <p></p>
-        <p>Enter intials: <textarea name="" id="" ></textarea> <button>submit</button></p> 
+        <h3 class="">All Done! </h3>
+        <p id="finalScore"></p>
+        <p>Enter intials: <textarea name="" id=""></textarea> <button>submit</button></p>
 
     </div>
-  
-        <!-- <h2 class="allDone">All Done!</h2>
+
+    <!-- <h2 class="allDone">All Done!</h2>
         <h3 class="finalscore"> Your final score is 45</h3>
         <h3 class="intials">Enter Initials: <input type="text"> <button id="submit">Submit</button></h3>
     </div> -->
     <script src="./Assets/js/script.js"></script>
 </body>
+
 </html>

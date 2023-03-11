@@ -12,6 +12,8 @@
 // -----new code----
 var openingPage = document.querySelector("#openingPage");
 var quizPage = document.querySelector("#quizPage");
+var scorePage = document.querySelector("#scorePage");
+var finalScore = document.querySelector("#finalScore");
 var currentQuestion = 0;
 var startQuiz = document.querySelector("#startQuiz")
 var question = document.querySelector(".question");
@@ -111,13 +113,15 @@ function startTimer() {
         
         
     });
-
-    function displayResults(){
-
-    }
-
-    
+  
   }
+
+  function displayResults(){
+    finalScore.textContent = "Your final score is "
+    quizPage.classList.add("hidden")
+    scorePage.classList.remove("hidden")
+
+    };
 
   function checkAnswer(event){
     let userAnswer= parseInt(event.target.dataset.answer)
