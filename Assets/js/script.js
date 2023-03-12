@@ -14,6 +14,7 @@ var openingPage = document.querySelector("#openingPage");
 var quizPage = document.querySelector("#quizPage");
 var scorePage = document.querySelector("#scorePage");
 var finalScore = document.querySelector("#finalScore");
+var highScorePage = document.querySelector("#highScorePage");
 var currentQuestion = 0;
 var startQuiz = document.querySelector("#startQuiz")
 var question = document.querySelector(".question");
@@ -117,11 +118,16 @@ function startTimer() {
   }
 
   function displayResults(){
-    finalScore.textContent = "Your final score is "
+    finalScore.textContent = "Your final score is"; timerCount
     quizPage.classList.add("hidden")
     scorePage.classList.remove("hidden")
 
     };
+// need to finish highscores function to create list for highscores and only display at end.
+    function displayHighScores(){
+        highScorePage.classList.remove("hidden")
+        let item = document.createElement("li")
+    }
 
   function checkAnswer(event){
     let userAnswer= parseInt(event.target.dataset.answer)

@@ -26,6 +26,8 @@
     flex-direction: column;
   }
 
+
+
  
 
 /* Setting my h3 element with intro class to desired font weight and size. Also, setting a width, so it can wrap around. */
@@ -71,3 +73,9 @@
 .hidden{
     display: none;
 }
+
+/* .scorePage {
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+  } */
