@@ -79,20 +79,12 @@ function startTimer() {
     timer = setInterval(function() {
       timerCount--;
       timerClock.textContent = timerCount;
-    //   if (timerCount >= 0) {
-    //     // Tests if win condition is met
-    //     if (isWin && timerCount > 0) {
-    //       // Clears interval and stops timer
-    //       clearInterval(timer);
-    //       winGame();
-    //     }
-    //   }
-    //   // Tests if time has run out
-    //   if (timerCount === 0) {
-    //     // Clears interval
-    //     clearInterval(timer);
-    //     loseGame();
-    //   }
+   
+      // Tests if time has run out
+      if (timerCount < 1) {
+        // Clears interval
+        displayResults();
+      }
     }, 1000);
   };
 
@@ -127,7 +119,7 @@ function startTimer() {
 // need to finish highscores function to create list for highscores and only display at end.
     function displayHighScores(){
         highScorePage.classList.remove("hidden")
-        scorePage.classList.add("hidden")
+        
         // let item = document.createElement("li")
     }
 
@@ -150,10 +142,7 @@ function startTimer() {
         // answersEl.innerHTML = ""
         // displayQuestion()
     }
-    if (timerCount === 0) {
-        // Clears interval
-        displayResults();
-      }
+   
 
   }
 

@@ -1,4 +1,10 @@
-
+/* 
+#scorePage {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  } */
 /* setting display flex to class topLine and spreading them out to each end. Also, adjusting font size and weight. */
 .topLine {
     display: flex;
@@ -70,12 +76,9 @@
     background-color: grey;
 }
 
+
+
 .hidden{
     display: none;
 }
 
-/* .scorePage {
-    display: flex;
-    text-align: center;
-    flex-direction: column;
-  } */
