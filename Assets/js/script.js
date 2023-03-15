@@ -111,7 +111,7 @@ function startTimer() {
   }
 
   function displayResults(){
-    finalScore.textContent = "Your final score is"; timerCount
+    finalScore.textContent = "Your final score is" + timerCount;
     quizPage.classList.add("hidden")
     scorePage.classList.remove("hidden")
 
