@@ -15,6 +15,7 @@ var questionEl = document.getElementById("question");
 var answersEl = document.getElementById("answers");
 var blank = document.querySelector(".intro");
 var timerClock = document.querySelector(".timer");
+var initialsEl = document.getElementById("initials");
 var timer;
 var timerCount;
 
@@ -96,21 +97,31 @@ function startTimer() {
   }
 
   function displayResults(){
-    finalScore.textContent = "Your final score is" + " " + timerCount;
+    finalScore.textContent =  timerCount;
     quizPage.classList.add("hidden")
     scorePage.classList.remove("hidden")
 
     function stopCount() {
         clearTimeout(timerClock);
-        timerCount = timerCount.value;
+        timerCount = timerCount ;
       }
       stopCount();
 
     };
 
     function displayHighScores(){
-        highScorePage.classList.remove("hidden")
-        
+        highScorePage.classList.remove("hidden");
+        var userInitials = initialsEl.value;
+        var userScore = finalScore.textContent ;
+        console.log(userInitials);
+        console.log(userScore);
+        var highscores = JSON.parse(window.localStorage.getItem("highscores")) || [];
+        var newScore = {
+            score: userScore,
+            initials: userInitials,
+        };
+        highscores.push(newScore);
+        window.localStorage.setItem("highscores", JSON.stringify(highscores));
         // let item = document.createElement("li")
     }
 
