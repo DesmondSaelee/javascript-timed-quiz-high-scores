@@ -13,6 +13,7 @@
 var openingPage = document.querySelector("#openingPage");
 var quizPage = document.querySelector("#quizPage");
 var scorePage = document.querySelector("#scorePage");
+var scorePageButton = document.querySelector("#scorePageButton");
 var finalScore = document.querySelector("#finalScore");
 var highScorePage = document.querySelector("#highScorePage");
 var currentQuestion = 0;
@@ -126,7 +127,8 @@ function startTimer() {
 // need to finish highscores function to create list for highscores and only display at end.
     function displayHighScores(){
         highScorePage.classList.remove("hidden")
-        let item = document.createElement("li")
+        scorePage.classList.add("hidden")
+        // let item = document.createElement("li")
     }
 
   function checkAnswer(event){
@@ -148,6 +150,10 @@ function startTimer() {
         // answersEl.innerHTML = ""
         // displayQuestion()
     }
+    if (timerCount === 0) {
+        // Clears interval
+        displayResults();
+      }
 
   }
 
@@ -162,7 +168,9 @@ function startTimer() {
 
   startQuiz.addEventListener("click", startGame);
 
-  answersEl.addEventListener("click", checkAnswer )
+  answersEl.addEventListener("click", checkAnswer);
+  
+  scorePageButton.addEventListener("click", displayHighScores);
 
   init();
 
