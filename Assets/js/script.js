@@ -8,8 +8,10 @@ var scorePage = document.querySelector("#scorePage");
 var scorePageButton = document.querySelector("#scorePageButton");
 var finalScore = document.querySelector("#finalScore");
 var highScorePage = document.querySelector("#highScorePage");
+var highscoresEl = document.querySelector("#highscores");
+var clearScores = document.querySelector("#clearScores");
 var currentQuestion = 0;
-var startQuiz = document.querySelector("#startQuiz")
+var startQuiz = document.querySelector("#startQuiz");
 var question = document.querySelector(".question");
 var questionEl = document.getElementById("question");
 var answersEl = document.getElementById("answers");
@@ -96,34 +98,46 @@ function startTimer() {
   
   }
 
+  function stopCount() {
+    clearInterval(timer);
+    timerCount = timerCount ;
+  }
+
   function displayResults(){
+    stopCount();
     finalScore.textContent =  timerCount;
     quizPage.classList.add("hidden")
     scorePage.classList.remove("hidden")
 
-    function stopCount() {
-        clearTimeout(timerClock);
-        timerCount = timerCount ;
-      }
-      stopCount();
-
     };
+
+
 
     function displayHighScores(){
         highScorePage.classList.remove("hidden");
         var userInitials = initialsEl.value;
+        var highscores = []
         var userScore = finalScore.textContent ;
-        console.log(userInitials);
-        console.log(userScore);
-        var highscores = JSON.parse(window.localStorage.getItem("highscores")) || [];
         var newScore = {
             score: userScore,
             initials: userInitials,
         };
+        console.log(userInitials);
+        console.log(userScore);
         highscores.push(newScore);
         window.localStorage.setItem("highscores", JSON.stringify(highscores));
-        // let item = document.createElement("li")
-    }
+        var highscores = JSON.parse(window.localStorage.getItem("highscores")) || [];
+        
+        
+        
+        for (let index = 0; index < highscores.length; index++) {
+            let item = document.createElement("li");
+            item.innerHTML = highscores[index].initials + "  - " + highscores[index].score;
+            highscoresEl.appendChild(item);
+            
+        }
+        
+    };
 
   function checkAnswer(event){
     let userAnswer= parseInt(event.target.dataset.answer)
@@ -145,7 +159,14 @@ function startTimer() {
   
    
 
+  };
+
+  function deleteScores(){
+    localStorage.clear();
+    window.location.reload();
   }
+
+
 
 
 
@@ -156,6 +177,7 @@ function startTimer() {
   
   scorePageButton.addEventListener("click", displayHighScores);
 
+  clearScores.addEventListener("click", deleteScores)
   init();
 
 
